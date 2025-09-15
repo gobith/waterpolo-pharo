@@ -24,6 +24,12 @@ WPLedenlijstReader class >> exampleHetY [
 ]
 
 { #category : 'accessing' }
+WPLedenlijstReader class >> players [
+
+	^self readDolfijnSportlink , self readHetY
+]
+
+{ #category : 'accessing' }
 WPLedenlijstReader class >> readDolfijnAllUnited [
 
 	| file players |

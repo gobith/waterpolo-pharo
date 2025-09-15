@@ -44,6 +44,12 @@ WPPlayer >> dateOfBirth: anObject [
 ]
 
 { #category : 'accessing' }
+WPPlayer >> dateOfBirthString [
+
+	^self dateOfBirth ddmmyyyy
+]
+
+{ #category : 'accessing' }
 WPPlayer >> discipline [
 
 	^ discipline
@@ -67,7 +73,7 @@ WPPlayer >> dolfijnSportlinkDateOfBirth: anObject [
 	| array |
 	array := anObject substrings: '/'.
 
-	dateOfBirth := DateAndTime
+	dateOfBirth := Date
 		               year: (array at: 3) asInteger
 		               month: (array at: 1) asInteger
 		               day: (array at: 2) asInteger.
@@ -143,7 +149,7 @@ WPPlayer >> hetYDateOfBirth: anObject [
 	| array |
 	array := anObject substrings: '/'.
 
-	dateOfBirth := DateAndTime
+	dateOfBirth := Date
 		               year: (array at: 3) asInteger
 		               month: (array at: 2) asInteger
 		               day: (array at: 1) asInteger.
@@ -209,7 +215,7 @@ WPPlayer >> phoneNumber [
 { #category : 'accessing' }
 WPPlayer >> phoneNumber: anObject [
 
-	phoneNumber := anObject
+	phoneNumber := anObject asString
 ]
 
 { #category : 'accessing' }
@@ -249,4 +255,9 @@ WPPlayer >> surname [
 WPPlayer >> surname: anObject [
 
 	surname := anObject
+]
+
+{ #category : 'accessing' }
+WPPlayer >> year [
+	^ year
 ]
