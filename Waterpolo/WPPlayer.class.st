@@ -2,15 +2,18 @@ Class {
 	#name : 'WPPlayer',
 	#superclass : 'Object',
 	#instVars : [
+		'knzbRelationId',
 		'name',
 		'prefix',
 		'surname',
 		'gender',
 		'dateOfBirth',
+		'year',
 		'phoneNumber',
 		'email',
-		'clientId',
-		'category'
+		'category',
+		'homeClub',
+		'discipline'
 	],
 	#category : 'Waterpolo',
 	#package : 'Waterpolo'
@@ -29,18 +32,6 @@ WPPlayer >> category: anObject [
 ]
 
 { #category : 'accessing' }
-WPPlayer >> clientId [
-
-	^ clientId
-]
-
-{ #category : 'accessing' }
-WPPlayer >> clientId: anObject [
-
-	clientId := anObject
-]
-
-{ #category : 'accessing' }
 WPPlayer >> dateOfBirth [
 
 	^ dateOfBirth
@@ -52,6 +43,24 @@ WPPlayer >> dateOfBirth: anObject [
 	dateOfBirth := anObject
 ]
 
+{ #category : 'accessing' }
+WPPlayer >> discipline [
+
+	^ discipline
+]
+
+{ #category : 'accessing' }
+WPPlayer >> discipline: anObject [
+
+	discipline := anObject
+]
+
+{ #category : 'accessing' }
+WPPlayer >> dolfijnGender: anObject [
+
+	gender := anObject
+]
+
 { #category : 'accessing reader' }
 WPPlayer >> dolfijnSportlinkDateOfBirth: anObject [
 
@@ -61,7 +70,9 @@ WPPlayer >> dolfijnSportlinkDateOfBirth: anObject [
 	dateOfBirth := DateAndTime
 		               year: (array at: 3) asInteger
 		               month: (array at: 1) asInteger
-		               day: (array at: 2) asInteger
+		               day: (array at: 2) asInteger.
+		
+	year := dateOfBirth year
 ]
 
 { #category : 'accessing reader' }
@@ -126,11 +137,55 @@ WPPlayer >> gender: anObject [
 	gender := anObject
 ]
 
+{ #category : 'accessing reader' }
+WPPlayer >> hetYDateOfBirth: anObject [
+
+	| array |
+	array := anObject substrings: '/'.
+
+	dateOfBirth := DateAndTime
+		               year: (array at: 3) asInteger
+		               month: (array at: 2) asInteger
+		               day: (array at: 1) asInteger.
+		
+	year := dateOfBirth year
+]
+
+{ #category : 'accessing' }
+WPPlayer >> hetYGender: anObject [
+
+	gender := anObject
+]
+
+{ #category : 'accessing' }
+WPPlayer >> homeClub [
+
+	^ homeClub
+]
+
+{ #category : 'accessing' }
+WPPlayer >> homeClub: anObject [
+
+	homeClub := anObject
+]
+
 { #category : 'initialization' }
 WPPlayer >> initialize [ 
 
 	super initialize .
 	prefix := ''.
+]
+
+{ #category : 'accessing' }
+WPPlayer >> knzbRelationId [
+
+	^ knzbRelationId
+]
+
+{ #category : 'accessing' }
+WPPlayer >> knzbRelationId: anObject [
+
+	knzbRelationId := anObject
 ]
 
 { #category : 'accessing' }
