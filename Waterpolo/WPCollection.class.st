@@ -39,6 +39,12 @@ WPCollection >> juniors [
 ]
 
 { #category : 'actions' }
+WPCollection >> partitionOnTeam [
+
+	
+]
+
+{ #category : 'actions' }
 WPCollection >> writeMDFiles [
 
 	players do: [ :player | (WPMDFIleWriter on: player) write ]

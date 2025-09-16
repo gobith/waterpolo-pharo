@@ -13,7 +13,8 @@ Class {
 		'email',
 		'category',
 		'homeClub',
-		'discipline'
+		'discipline',
+		'team'
 	],
 	#category : 'Waterpolo',
 	#package : 'Waterpolo'
@@ -255,6 +256,18 @@ WPPlayer >> surname [
 WPPlayer >> surname: anObject [
 
 	surname := anObject
+]
+
+{ #category : 'accessing' }
+WPPlayer >> team [
+
+	^ team
+]
+
+{ #category : 'accessing' }
+WPPlayer >> team: anObject [
+
+	team := anObject
 ]
 
 { #category : 'accessing' }
