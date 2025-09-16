@@ -31,7 +31,7 @@ WPMDFIleWriter >> path [
 WPMDFIleWriter >> properties [
 
 	^ #( 'knzbRelationId' 'name' 'prefix' 'surname' 'gender' 'dateOfBirth'
-	     'year' 'phoneNumber' 'email' 'homeClub' )
+	     'year' 'team' 'phoneNumber' 'email' 'homeClub' )
 ]
 
 { #category : 'actions' }
@@ -46,7 +46,7 @@ WPMDFIleWriter >> writeMDOn: ws [
 
 	ws
 		nextPutAll: '---';
-		cr.
+		lf.
 
 	self properties do: [ :property |
 			ws
@@ -54,7 +54,7 @@ WPMDFIleWriter >> writeMDOn: ws [
 				nextPut: $:;
 				space.
 			self writeProperty: property on: ws.
-			ws cr ].
+			ws lf ].
 
 
 	ws nextPutAll: '---'
