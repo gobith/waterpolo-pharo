@@ -38,10 +38,21 @@ WPCollection >> juniors [
 	^self class on: (players select: [: each | each year >= 2007])
 ]
 
+{ #category : 'accessing' }
+WPCollection >> o16_o18 [
+	
+	^self class on: (self juniors players select: [ : player  | player  year <= 2011 ])
+]
+
 { #category : 'actions' }
 WPCollection >> partitionOnTeam [
 
 	
+]
+
+{ #category : 'accessing' }
+WPCollection >> players [
+	^ players
 ]
 
 { #category : 'actions' }

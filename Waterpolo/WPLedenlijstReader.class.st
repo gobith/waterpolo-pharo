@@ -157,7 +157,7 @@ WPLedenlijstReader class >> readHetY [
 			players do: [ : each | each homeClub: 'Het Y' ].
 			
 
-	^ players select: [ : each | each discipline = 'W' ]
+	^ players select: [ : each | each discipline = 'W' or: [ each discipline = 'WZ' ]]
 ]
 
 { #category : 'accessing' }
